@@ -130,7 +130,7 @@ export class AppComponent {
     this.initForm();
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
-      {name: 'keywords', content: 'Angular, Universal, Example'},
+      {name: 'charset', content: 'utf-8'},
       {name: 'description', content: 'Angular Universal Example'},
       {name: 'robots', content: 'index, follow'}
     ]);
