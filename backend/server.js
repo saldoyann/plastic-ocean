@@ -36,10 +36,10 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static('uploads'));
-app.use(express.static(__dirname + '/dist/climact-projet'));
+app.use(express.static(__dirname + '../dist/climact-projet'));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname + '/dist/climact-projet/index.html'));
+    res.sendFile(path.join(__dirname + '../dist/climact-projet/index.html'));
 });
 
 app.get('/', (req, res) => {
