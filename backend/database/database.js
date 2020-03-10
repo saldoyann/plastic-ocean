@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     port: '8889',
     user: 'b1752824fb5086',
     password: 'a9a2e190',
-    database: 'heroku_2d70bf9b778a071'
+    database: 'Plastic Ocean'
 })
 
 module.exports = connection;
