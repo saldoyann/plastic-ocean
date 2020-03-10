@@ -3,16 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng ./backend/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod"
-  },
-  "engines": {
-    "node": "12.14.1",
-    "npm": "6.13.7"
   },
   "private": true,
   "dependencies": {
@@ -55,5 +51,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.7"
   }
 }
