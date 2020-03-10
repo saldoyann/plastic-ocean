@@ -36,6 +36,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static('uploads'));
+app.use(express.static(__dirname + '/dist/climact-projet'));
+
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname + '/dist/climact-projet/index.html'));
+});
 
 app.get('/', (req, res) => {
     connection.query("SELECT * FROM `idees-article` ORDER BY id_idee DESC LIMIT 3", (err, rows, fields) => {
