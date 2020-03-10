@@ -10,10 +10,10 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
     host: 'eu-cdbr-west-02.cleardb.net',
-    port: '8889',
+    port: '3306',
     user: 'b1752824fb5086',
     password: 'a9a2e190',
-    database: 'Plastic Ocean'
+    database: 'heroku_2d70bf9b778a071'
 })
 
 module.exports = connection;
