@@ -1,0 +1,216 @@
+<header [ngStyle]="{'height.px': getScreenSize()}"  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"></header>
+
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top col-12 col-xs-12 col-md-12 col-xl-12">
+    <a  class="h4 m-0">
+      PLASTIC OCEAN
+    </a>
+  
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+    <div class="collapse navbar-collapse show" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="nav nav-pills">
+        <li [ngClass]="{ 'col-12': navbarOpen }" class="nav-item">
+          <a (click)="scrollToElement(intro)" class="nav-link">Présentation</a>
+        </li>
+  
+        <li [ngClass]="{ 'col-12': navbarOpen }" class="nav-item">
+          <a (click)="scrollToElement(causes)" class="nav-link">Causes</a>
+        </li>
+
+        <li [ngClass]="{ 'col-12': navbarOpen }" class="nav-item">
+            <a (click)="scrollToElement(actualites)" class="nav-link">Actualités</a>
+          </li>
+
+          <li [ngClass]="{ 'col-12': navbarOpen }" class="nav-item">
+            <a (click)="scrollToElement(team)" class="nav-link">Team</a>
+          </li>
+
+          <li [ngClass]="{ 'col-12': navbarOpen }" class="nav-item">
+            <a (click)="scrollToElement(form)" class="nav-link">Une idée ?</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+<main>
+    <div #intro id="intro" class="container mb-4">
+       <div class="row">
+            <div (click)="scrollToElement(intro)" class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="col-12">
+                <p class="text-center mt-4 h2 font-weight-bold">POURQUOI PARLE T-ON DE 7ÈME CONTINENT ? </p>
+                <hr>
+                <p class="font-italic text-center h4 mb-3">Le continent Homme-made</p>                  
+            </div>
+
+            <div class="col-md-6 intro-textes">
+                <p>
+                    Ce que l’on appelle « le septième continent » ne constitue pas une masse solide mais une masse de détritus plastiques déversés par l’Homme qui, menés par les courants océaniques, s’établit entre les côtes du Japon et de l’Amérique du Nord. On parle de 1800 milliards de tonnes de déchets qui flottent actuellement dans les océans. Selon une étude publiée en 2018 dans la revue Scientific Reports, le septième continent mesure plus de 1,6 millions de km2, ce qui représente environ six fois la taille de la France. Voilà pourquoi nous parlons d’un continent « Homme-made ».
+                </p>
+            </div>
+            <div  class="col-md-6" >
+                <img class="w-100 h-100" src="../assets/lego_crowd.jpg">
+            </div>
+            <div  [innerHtml]="iframe_html" class="col-md-6 mt-5" >
+            </div>
+            <div  class="col-md-6 intro-textes mt-5" >
+                <p>
+                    Il existe des projets comme Ocean Cleanup qui essaient de nettoyer ce “continent de plastique” flottant, même si le projet montre ses limites.
+                    Il faut prendre le problème à la source. La solution serait d’endiguer les flux qui alimentent le 7ème continent.
+                    Le président de l’association Expédition 7ème Continent, François Lambert, pense qu’il est impossible de nettoyer les océans de manière définitive "en revanche, dit-il, endiguer ce flux est absolument possible et tout à fait crédible dans le temps court. Ça suppose de la pédagogie et nécessite l'implication de tous."
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div #causes id="causes" class="container-fluid sandsection" >
+        <div class="container">
+            <div class="row col-12">
+                <p class="mx-auto mt-4 text-center font-italic">Source : <a id="srcPourcent" (click)="onNavigateSrcPourcent()">https://fr.oceancampus.eu/cours/h3s/pollution-des-oceans-origine-des-dechets-aquatiques</a>
+                </p>
+            </div>
+            <div class="row">
+                <div class="causes_img col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img id="img_P" class="OpacityImg" style="opacity: 1;" src="../assets/80.png" (click)="readCause($event)">
+                </div>
+                <div class="causes_img col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img id="img_H" class="OpacityImg" src="../assets/10.png" (click)="readCause($event)">
+                </div>
+                <div id="causes_imgLast" class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img id="img_C" class="OpacityImg" src="../assets/10.png" (click)="readCause($event)">
+                </div>
+            </div>
+            <div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p id="onglet_P" class="causes_texte mx-auto;">
+                    <strong class="span_text">80% des déchets aquatiques viennent de l’intérieur des terres.</strong> <br />
+                    Ils arrivent dans les océans par les cours d’eau, transportés par le cycle naturel de l’eau. (Abandon sur le bord des routes et dans les rues, activités industrielles et commerciales, activités agricoles, décharges sauvages, origines domestiques)
+                </p>
+                <p id="onglet_H" class="causes_texte mx-auto" style="display: none;">
+                    <strong class="span_text">10% sont abandonnés sur les rivages.</strong> <br /> 
+                    (Usagers des berges et du littoral, infrastructures côtières)
+                </p> 
+                <p id="onglet_C" class="causes_texte mx-auto" style="display: none;">
+                    <strong class="span_text">10% sont rejetés directement en mer.</strong><br />
+                    (Transport maritime, pêche, activités nautiques)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div #actualites id="actualites" class="container">
+        <p class="text-center mt-2 h2 font-weight-bold">ACTUALITÉS</p>
+        <hr>
+        <p class="font-italic text-center h4 mb-3">Les nouvelles à la surface</p>
+        <div class="row" >
+            <ng-container *ngFor="let lidee of Idees | async">
+                <div class="img-container col-md-4">
+                    <img class="col-md-12" [src]="'http://localhost:4201/'+lidee.photo_couverture">
+                    <button id="{{lidee.id_idee}}" class="btn-idee btn p-0" type="button" (click)='openExplication($event)'>Explorer</button>  
+                </div>
+
+                <div id="myModal{{lidee.id_idee}}" class="modal">
+                    <div class="container">
+                        <div class="row col-12">
+                            <div class="m-0 bg-light col-12 p-3 border border-dark">
+                                <span id="{{lidee.id_idee}}" class="close m-0 col-2 text-right" (click)="OnCloseModal($event)">&times;</span>
+                                <h5 class="col-10" id="modalTitre">Idée proposée par {{ lidee.email }}</h5>
+                            </div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="p-3 bg-light col-12 border border-dark">
+                                <p>{{ lidee.explication_idee }} </p>
+                            </div>                               
+                        </div>
+                    </div>      
+                </div>                                                        
+            </ng-container>
+        </div>
+    </div>
+
+    <div #team id="team" class="container-fluid sandsection">
+        <div class="container">
+            <p class="text-center mt-2 h2 font-weight-bold">LA TEAM</p>                
+            
+            <div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="team-photo p-3 col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img class="img-profil" src="../assets/romain-profil.jpg">
+                    <div class="overlay">
+                        <img src="../assets/instagramLogo24.png">
+                        <p><a (click)="onNavigate($event)" class="instaLien" id="romainhaar">romainhaar</a></p>   
+                    </div>
+                </div>
+                <div class="team-photo p-3 col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img class="img-profil" src="../assets/jilan-profil.png">
+                    <div class="overlay">
+                        <img src="../assets/instagramLogo24.png">
+                        <p><a (click)="onNavigate($event)" class="instaLien" id="barbenwar.ft">barbenwar.ft</a></p>   
+                    </div>
+                </div>
+                <div class="team-photo p-3 col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img class="img-profil" src="../assets/yann-profil.jpg">
+                    <div class="overlay">
+                        <img src="../assets/instagramLogo24.png">
+                        <p><a (click)="onNavigate($event)" class="instaLien" id="ya2nsld">ya2nsld</a></p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="boiteIdees" class="container mt-5">
+        <div class="row">
+            <div id="form" class="col-md-6">
+                <p id="bi" class="text-center">La boîte à idée !</p>
+                <p class="form-sous-titre text-center">Envie de partager avec nous ? </p>
+                <p class="form-sous-titre text-center">    Dîtes-nous tout !</p>
+                
+
+                <form method="post" enctype="multipart/form-data" class="form-inline" id="form_idee" [formGroup]="Ideeform" (ngSubmit)="onSubmitForm()">
+                    <div id="ValidForm" class="valid-feedback d-block ml-3" *ngIf="this.ValidationForm != ''">
+                        {{ this.ValidationForm }} 
+                    </div>
+                    <div id="ValidForm2" class="invalid-feedback d-block ml-3" *ngIf="this.ValidationImg != ''">
+                        {{ this.ValidationImg }} 
+                    </div>
+                    <div class="form-group mb-3 col-12">
+                        <input placeholder="Adresse e-mail" type="text" class="form-control w-100" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Veuillez insérez votre adresse email</div>
+                            <div *ngIf="f.email.errors.email">Votre adresse email doit être valide</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <textarea placeholder="Message" rows="3" class="form-control w-100" id="corps" formControlName="corps" [ngClass]="{ 'is-invalid': submitted && f.corps.errors }"></textarea>
+                        <div *ngIf="submitted && f.corps.errors" class="invalid-feedback">
+                            <div *ngIf="f.corps.errors.required">Veuillez écrire votre idée</div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="idee-photo" class=" col-12 mt-2">
+                        <label for="lettreMotiv" class="col-8 mx-auto p-0">Insérer une photo inférieure à 2 Mo</label>
+                        <input type="file" name="photo_couv" class="form-control-file col-8 mx-auto p-0" id="photo" formControlName="photo_couv" (change)="selectPhoto($event)" [ngClass]="{ 'is-invalid': submitted && f.photo.errors }">
+                        <div *ngIf="submitted && f.photo.errors" class="invalid-feedback">
+                            <div *ngIf="f.photo.errors.required">Veuillez insérez une photo d'illustration</div>
+                        </div>             
+                    </div>       
+                    <button id="btn-submit" class="d-block btn mt-3 mx-auto rounded" type="submit">Je partage mon info</button>
+                </form>
+                
+            </div>
+        
+            <div #form id="form-image" class="col-md-6 mt-5">
+                <img class="w-100" src="../assets/form-img.png">
+            </div>
+        </div>
+    </div>
+    <br />
+    <footer id="lefooter" class="text-center h-10">
+        <hr>
+        <p>Copyright 2019</p>
+    </footer>
+</main>

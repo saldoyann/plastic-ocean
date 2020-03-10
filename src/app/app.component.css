@@ -1,0 +1,275 @@
+@font-face {
+    font-family: "Noteworthy";
+    src: url("../assets/Font/Noteworthy/Noteworthy-Lt.ttf");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/Font/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("../assets/Font/HelveticaNeue/HelveticaNeueLTPro-Lt_1.otf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/Font/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../assets/Font/Montserrat/Montserrat-Light.ttf");
+}
+
+body, html, header, h1 {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+header {
+    background-image: url("../assets/ocean-dechets.jpg");
+    background-repeat: round;
+    background-size: cover;
+
+}
+
+.arrow{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+#navbar {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url('../assets/dropdown-icon.png');
+}
+
+ul a {
+    font-size: 25px;
+    color: white;
+    top: 20px;
+    right: 20px;
+    margin: 10px; 
+}
+
+ul {
+    display:-webkit-flex;
+    display:flex;
+    list-style-type:none;
+    padding:0;
+    justify-content:flex-end;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+hr {
+    width: 15%;
+    border: 1.2px solid black;
+}
+
+.intro-textes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat Light'; 
+}
+
+.sandsection {
+    background-color: rgba(193, 126, 58, 0.5) ;
+    color: white;
+}
+
+#causes div:first-child {
+    margin-bottom: 40px;  
+}
+
+.causes_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid white; 
+    height: 100px;
+}
+
+#causes_imgLast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.span_text {
+    font-size: 1.5em;
+}
+
+#srcPourcent {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.OpacityImg {
+    opacity: 0.5;
+}
+
+.causes_texte {
+    color: black;
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+.img-profil {
+    width: 100%;
+    height: 400px;
+}
+
+.img-actu {
+    width:25%;
+    height: 200px;
+}
+
+.team-photo:hover > img {
+    -webkit-filter: blur(3px); 
+    filter: blur(3px);
+}
+
+.overlay {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 91%;
+    /* background: rgba(0, 0, 0, 0.2); */
+    color: #fff;
+    opacity: 0;  
+}
+
+.overlay:hover {
+    opacity: 1;
+    margin-left: 5%;
+}
+
+.overlay p {
+    margin: 0px 10px;
+}
+
+.instaLien {
+    cursor: pointer;
+}
+
+#form button {
+    color: white;
+    background-color: black;
+}
+
+#bi {
+    font-family: 'Noteworthy';
+    font-size: 50px;
+}
+
+.form-sous-titre{
+    font-family: 'HelveticaNeue';
+    color: #008EA7;
+}
+
+#btn-submit {
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+
+#img_container {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+}
+
+.btn-idee {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    bottom: 13%;
+    right: 25%;
+    width: 50%;
+    height: 30px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    /* width: 100%; 
+    height: 100%;  */
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#modalTitre {
+    color: rgba(193, 126, 58, 0.5)  
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Small Devices */
+@media only screen and (max-width: 767.98px){
+    .causes_img {
+        border-right: none;
+    }
+}
