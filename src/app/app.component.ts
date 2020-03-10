@@ -7,6 +7,7 @@ import { Idee } from './models/Idee.model';
 import { IdeeService } from './services/idee.service';
 
 import { EmbedVideoService } from 'ngx-embed-video';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -121,10 +122,18 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder,
               private ideeService: IdeeService,
               private http: HttpClient,
-              private embedService: EmbedVideoService) { this.iframe_html = this.embedService.embed(this.safeURL, { attr: { width: "100%", height: "100%" } });  }
+              private embedService: EmbedVideoService,
+              private titleService: Title, 
+              private metaService: Meta) { this.iframe_html = this.embedService.embed(this.safeURL, { attr: { width: "100%", height: "100%" } });  }
 
   ngOnInit() {
     this.initForm();
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Angular, Universal, Example'},
+      {name: 'description', content: 'Angular Universal Example'},
+      {name: 'robots', content: 'index, follow'}
+    ]);
   }
 
   initForm() {
