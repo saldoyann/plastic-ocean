@@ -6,6 +6,9 @@ const path = require('path');
 var htmlspecialchars = require('htmlspecialchars');
 var app = express();
 
+var http = require('http');
+var server = http.Server(app);
+
 var PORT = process.env.PORT || 4201;
 
 var storage = multer.diskStorage({
@@ -65,6 +68,6 @@ app.post('/', uploadPhoto, function (req, res, next) {
     }
 })
 
-app.listen(PORT, '127.0.0.1', function(){
+server.listen(PORT, function(){
     console.log("Mon serveur écoute sur le port 4201 ! :)");
 })
