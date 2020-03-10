@@ -6,6 +6,8 @@ const path = require('path');
 var htmlspecialchars = require('htmlspecialchars');
 var app = express();
 
+var PORT = process.env.PORT || 4201;
+
 var storage = multer.diskStorage({
     destination: function(req, res, next){
         next(null, path.join(__dirname, './uploads/'));
@@ -63,6 +65,6 @@ app.post('/', uploadPhoto, function (req, res, next) {
     }
 })
 
-app.listen(4201, '127.0.0.1', function(){
+app.listen(PORT, '127.0.0.1', function(){
     console.log("Mon serveur écoute sur le port 4201 ! :)");
 })
