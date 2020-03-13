@@ -1,5 +1,5 @@
 var express = require('express');
-var connection = require('./database/database');
+var connection = require('./backend/database/database');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const path = require('path');
@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 4201;
 
 var storage = multer.diskStorage({
     destination: function(req, res, next){
-        next(null, path.join(__dirname, './uploads/'));
+        next(null, path.join(__dirname, './backend/uploads/'));
     },
     filename: function(req, file, next){
         next(null , file.originalname);
@@ -35,12 +35,12 @@ app.use((req, res, next) => {
     }
 });
 
-app.use(express.static('uploads'));
+app.use(express.static('./backend/uploads'));
 app.use(express.static(__dirname + '/dist/climact-projet'));
 
-// app.get('/*', function(req,res) {
-//     res.sendFile(path.join(__dirname + '/dist/climact-projet/index.html'));
-// });
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname + '/dist/climact-projet/index.html'));
+});
 
 app.get('/', (req, res) => {
     console.log(__dirname);
