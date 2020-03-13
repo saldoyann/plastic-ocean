@@ -15,7 +15,7 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'climact-projet';
+  title = 'Plastic Ocean';
   scrHeight: any;
   scrWidth: any;
 

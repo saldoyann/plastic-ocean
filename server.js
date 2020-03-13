@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
             console.log("Erreur : " +err);
             res.end();
         }
-        res.json(rows);
+        res.send(rows);
         //console.log(rows['photo_couverture']);
         //res.sendFile(path.join(__dirname, "./uploads/rows"));
     })
