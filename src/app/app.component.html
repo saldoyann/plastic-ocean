@@ -109,7 +109,7 @@
         <div class="row" >
             <ng-container *ngFor="let lidee of Idees | async">
                 <div class="img-container col-md-4">
-                    <img class="col-md-12" [src]="'https://plastic-ocean.herokuapp.com/'+lidee.photo_couverture">
+                    <img class="col-md-12" [src]="'http://localhost:4201/'+lidee.photo_couverture">
                     <button id="{{lidee.id_idee}}" class="btn-idee btn p-0" type="button" (click)='openExplication($event)'>Explorer</button>  
                 </div>
 

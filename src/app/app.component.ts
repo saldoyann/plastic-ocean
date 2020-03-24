@@ -30,7 +30,7 @@ export class AppComponent {
   iframe_html: any;
   safeURL = "https://www.youtube.com/watch?v=QbWDWxB6gSI";
   
-  Idees = this.http.get<any[]>('https://plastic-ocean.herokuapp.com/');
+  Idees = this.http.get<any[]>('http://localhost:4201/');
   modalService: any;
 
 
